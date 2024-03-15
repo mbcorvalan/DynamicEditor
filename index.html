@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Main Content Section -->
+        <section class="flex-1 p-4">
+            <header>
+                <h1 class="text-xl font-bold mb-4">Editor</h1>
+            </header>
+            <!-- Button Controls -->
+            <div class="flex justify-between items-center mb-4" aria-label="Editor Controls">
+                <div class="flex gap-2">
+                    <!-- Existing buttons here -->
+                    <!-- Button to add title -->
+                    <button id="addTitle"
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300 ease-in-out">
+                        <i class="fas fa-plus" aria-hidden="true"></i> Add Title
+                    </button>
+                    <!-- Button to add text -->
+                    <button id="addText"
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300 ease-in-out">
+                        <i class="fas fa-plus" aria-hidden="true"></i> Add Text
+                    </button>
+                    <!-- Button to add image -->
+                    <button id="addImage"
+                        class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300 ease-in-out">
+                        <i class="fas fa-plus" aria-hidden="true"></i> Add Image
+                    </button>
+                    <!-- Repeat for Subtitle, Image, and Text buttons with appropriate ids and event handlers -->
+                </div>
+            </div>
+
+            <!-- Editor Container -->
+            <div id="editor" class="flex flex-col gap-2 p-4 bg-gray-50 border border-gray-200 rounded-lg"
+                aria-live="polite">
+                <!-- Dynamically added elements will appear here -->
+            </div>
+
+        </section>
+
+        <!-- Preview Section -->
+        <section class="flex-1 p-4">
+            <header class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Preview</h2>
+                <div class="flex items-center gap-2">
+                    <!-- Notification initially hidden -->
+                    <div id="copyNotification"
+                        class="copy-notification hidden bg-black text-white px-4 py-2 rounded-md transition-opacity duration-200">
+                        Text copied!</div>
+                    <div id="copyErrorButton"
+                        class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded focus:shadow-outline hidden transition-opacity duration-500">
+                        Copy error</div>
+                    <!-- Button to copy the markup -->
+                    <button id="copyMarkupButton"
+                        class="px-4 py-2 bg-gray-400 text-white rounded cursor-not-allowed">Copy MarkUp</button>
+                </div>
+            </header>
+            <div id="markup" class="w-full h-full bg-white p-5 border border-gray-300 rounded-lg overflow-auto">
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
